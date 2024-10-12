@@ -1,0 +1,42 @@
+public class Product
+{
+    // ... предыдущий код ...
+
+    // Метод для обновления цены товара
+    public void UpdatePrice(decimal newPrice)
+    {
+        Price = newPrice; // Установка новой цены
+    }
+
+    // Метод для пополнения запаса товара
+    public void Restock(int quantity)
+    {
+        if (quantity > 0) // Проверка на корректность количества
+        {
+            Stock += quantity; // Увеличение количества на складе
+        }
+        else
+        {
+            Console.WriteLine("Количество должно быть положительным."); // Сообщение об ошибке
+        }
+    }
+
+    // Метод для получения информации о товаре
+    public string GetProductInfo()
+    {
+        return $"Название: {Name}, Цена: {Price}, Количество на складе: {Stock}"; // Формирование строки с информацией
+    }
+
+    // Метод для уменьшения запаса при продаже
+    public void Sell(int quantity)
+    {
+        if (quantity > 0 && quantity <= Stock) // Проверка на корректность количества
+        {
+            Stock -= quantity; // Уменьшение запаса на складе
+        }
+        else
+        {
+            Console.WriteLine("Недостаточно товара на складе или некорректное количество."); // Сообщение об ошибке
+        }
+    }
+}

@@ -1,0 +1,27 @@
+using System;
+
+public class Product
+{
+    // Название товара
+    public string Name { get; private set; }
+    
+    // Цена товара
+    public decimal Price { get; private set; }
+    
+    // Количество на складе
+    public int Stock { get; private set; }
+
+    // Конструктор, принимающий все параметры
+    public Product(string name, decimal price, int stock)
+    {
+        Name = name; // Инициализация названия товара
+        Price = price; // Инициализация цены товара
+        Stock = stock; // Инициализация количества на складе
+    }
+
+    // Конструктор, принимающий только название товара
+    public Product(string name) : this(name, 0, 0)
+    {
+        // Вызов другого конструктора с параметрами по умолчанию
+    }
+}

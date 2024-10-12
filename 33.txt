@@ -1,0 +1,27 @@
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Создание нового товара с заданными параметрами
+        Product product1 = new Product("Книга", 500, 10);
+
+        // Вывод информации о товаре
+        Console.WriteLine(product1.GetProductInfo());
+
+        // Обновление цены товара
+        product1.UpdatePrice(550);
+        Console.WriteLine("После обновления цены: " + product1.GetProductInfo());
+
+        // Пополнение запаса
+        product1.Restock(5);
+        Console.WriteLine("После пополнения: " + product1.GetProductInfo());
+
+        // Продажа товара
+        product1.Sell(3);
+        Console.WriteLine("После продажи: " + product1.GetProductInfo());
+
+        // Пример создания товара с названием только
+        Product product2 = new Product("Тетрадь");
+        Console.WriteLine(product2.GetProductInfo()); // Информация о товаре с параметрами по умолчанию
+    }
+}
